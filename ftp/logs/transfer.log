@@ -1,0 +1,2 @@
+192.168.65.1 - user_3bd31175 [11/May/2025:20:18:04 -0000] "GET /var/www/html/kral.localhost/index.html" 200 1297
+192.168.65.1 - user_3bd31175 [11/May/2025:20:18:41 -0000] "PUT /var/www/html/kral.localhost/pupa.html" 200 0

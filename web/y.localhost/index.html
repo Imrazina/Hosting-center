@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>y.localhost — Your Hosting</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top left, #e0e7ff, #c7d2fe, #f0f4f8);
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      padding: 50px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, #6366f1, #3b82f6);
+      border-radius: 50%;
+      opacity: 0.2;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.4em;
+      color: #3b82f6;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cred-box {
+      background: #f9fafb;
+      padding: 28px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      box-shadow: inset 0 0 0 1px #e5e7eb;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .cred-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+    }
+
+    .cred-box h2 {
+      margin-top: 0;
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      color: #1e40af;
+      border-left: 4px solid #3b82f6;
+      padding-left: 12px;
+    }
+
+    .cred-box p {
+      margin: 10px 0;
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+    }
+
+    .cred-box strong {
+      display: inline-block;
+      width: 150px;
+      color: #6b7280;
+    }
+
+    code {
+      background-color: #e0f2fe;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      font-size: 0.95em;
+      color: #0c4a6e;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 40px 0;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 40px 20px;
+        padding: 30px 20px;
+      }
+
+      .cred-box strong {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Welcome to y.localhost!  </h1>
+
+    <div class="cred-box">
+      <h2>FTP Access</h2>
+      <p><strong>Server:</strong> ftp.local</p>
+      <p><strong>Username:</strong> user_e53326cd</p>
+      <p><strong>Password:</strong> <code>a554ade39c238ca5a1491d09570acaef</code></p>
+      <p><strong>Port:</strong> 21</p>
+    </div>
+
+    <div class="cred-box">
+      <h2>Database</h2>
+      <p><strong>Host:</strong> mysql</p>
+      <p><strong>Database Name:</strong> db_86e34920</p>
+      <p><strong>Username:</strong> db_23d3d390</p>
+      <p><strong>Password:</strong> <code>12676411fa7acef8</code></p>
+    </div>
+
+    <hr>
+
+    <p style="text-align: center; color: #94a3b8; font-size: 0.9em;">
+      Auto-generated hosting panel • Powered by magic 🪄
+    </p>
+  </div>
+</body>
+</html>

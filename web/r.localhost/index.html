@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>r.localhost — Your Hosting</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #1f2937; /* dark gray text */
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 80px auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+      padding: 40px 30px;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      color: #3b82f6; /* blue */
+      margin-bottom: 32px;
+    }
+
+    .cred-box {
+      border-left: 6px solid #3b82f6;
+      background-color: #f9fafb;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .cred-box:hover {
+      transform: translateY(-4px);
+    }
+
+    .cred-box h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.25em;
+      color: #1f2937;
+    }
+
+    .cred-box p {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    .cred-box strong {
+      display: inline-block;
+      width: 140px;
+      color: #6b7280; /* light gray */
+    }
+
+    code {
+      background-color: #e0f2fe; /* light blue */
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        margin: 40px 20px;
+        padding: 30px 20px;
+      }
+
+      .cred-box strong {
+        width: 100px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to r.localhost!</h1>
+
+    <div class="cred-box">
+      <h2>FTP Access</h2>
+      <p><strong>Server:</strong> ftp.local</p>
+      <p><strong>Username:</strong> user_0783dc82</p>
+      <p><strong>Password (MD5):</strong> <code>3d7d5cf8baf5ac34b2028303a6209291</code></p>
+      <p><small>Use this MD5 hash as your password when connecting.</small></p>
+      <p><strong>Port:</strong> 21</p>
+    </div>
+
+    <div class="cred-box">
+      <h2>Database</h2>
+      <p><strong>Host:</strong> mysql</p>
+      <p><strong>Database Name:</strong> db_b2fb7f56</p>
+      <p><strong>Username:</strong> db_ed3b2f7b</p>
+      <p><strong>Password:</strong> <code>f63bd05762509cf6</code></p>
+    </div>
+  </div>
+</body>
+</html>

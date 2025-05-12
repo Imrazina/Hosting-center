@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  mysql:
+    build: ./mysql
+    platform: linux/arm64
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: hosting_db
+      MYSQL_USER: hosting_user
+      MYSQL_PASSWORD: hosting_password
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - hosting-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    ports:
+      - "3306:3306"
+
+  ftp:
+    build: ./ftp
+    image: my-ftp-image
+    platform: linux/arm64
+    container_name: ftp
+    volumes:
+      - ./web:/var/www/html
+      - ./ftp/logs:/var/log/pure-ftpd
+      - ./ftp/sockets:/var/run/pure-ftpd
+      - ./ftp/passwd:/etc/pure-ftpd/passwd
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: pureftpd
+      MYSQL_PASSWORD: ftp_password
+      MYSQL_DATABASE: pureftpd
+      PUBLIC_IP: 10.221.166.89  # Добавьте эту строку
+    cap_drop:
+      - ALL
+    privileged: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    security_opt:
+      - seccomp=unconfined
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - hosting-network
+
+  php:
+    build: ./php
+    platform: linux/arm64
+    container_name: php
+    volumes:
+      - ./web:/var/www/html
+    depends_on:
+      - mysql
+    networks:
+      - hosting-network
+
+  nginx:
+    build: ./nginx
+    platform: linux/arm64
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./web:/var/www/html
+      - ./nginx/sites:/etc/nginx/sites-available
+    depends_on:
+      - php
+    networks:
+      - hosting-network
+
+networks:
+  hosting-network:
+    driver: bridge
